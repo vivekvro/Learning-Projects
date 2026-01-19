@@ -74,9 +74,6 @@ class featureEngineering(BaseEstimator, TransformerMixin):
         # ---------- house age ----------
         if 'yr_built' in X.columns and self.current_yr_ is not None:
             X['houseage'] = (self.current_yr_ - X['yr_built']).astype(int)
-        # ---------- total rooms ----------
-        # if {'bedrooms', 'bathrooms'}.issubset(X.columns):
-        #     X['totalrooms'] = (X['bedrooms'] + X['bathrooms']).astype(int)
             
         # ---------- basement flag ----------
         if 'sqft_basement' in X.columns:
